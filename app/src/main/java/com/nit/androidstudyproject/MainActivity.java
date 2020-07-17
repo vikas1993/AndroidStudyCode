@@ -3,7 +3,11 @@ package com.nit.androidstudyproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.Contacts;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,5 +46,38 @@ public class MainActivity extends AppCompatActivity {
        for(String s : cr){
            data.append(s+"\n");
        }
+    }
+    public void nativeContentProvider(View view){
+        Cursor cursor = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,null, null, null, null);
+        StringBuilder stringBuilder = new StringBuilder();
+        while (cursor.moveToNext()) {
+            String contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
+                    String hasPhone = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
+                Log.e("NativeContacts",hasPhone +contactId);
+            if (Boolean.parseBoolean(hasPhone)) {
+                // You know it has a number so now query it like this
+                Cursor phones = getContentResolver().query( ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = "+ contactId, null, null);
+                while (phones.moveToNext()) {
+                    String phoneNumber = phones.getString(phones.getColumnIndex( ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    stringBuilder.append("Phone "+phoneNumber+" || ");
+                }
+                phones.close();
+            }
+
+            Cursor emails = getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null, ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = " + contactId, null, null);
+
+            while (emails.moveToNext()) {
+                // This would allow you get several email addresses
+                String emailAddress = emails.getString(
+                        emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
+                stringBuilder.append("Phone "+emailAddress+" || \n");
+
+            }
+
+            emails.close();
+        }
+
+        Toast.makeText(this, stringBuilder, Toast.LENGTH_SHORT).show();
+        //Read more: http://mrbool.com/android-content-provider-how-to-use-content-provider-for-data-access/30446#ixzz6SRGV04LO
     }
 }

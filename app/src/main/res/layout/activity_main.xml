@@ -32,6 +32,11 @@
         android:layout_height="wrap_content"
         android:text="Content Provider"
         android:onClick="contentprovider"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Native Content Provider"
+        android:onClick="nativeContentProvider"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
