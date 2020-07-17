@@ -27,6 +27,11 @@
         android:layout_height="wrap_content"
         android:text="Delete Data"
         android:onClick="delete"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Content Provider"
+        android:onClick="contentprovider"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

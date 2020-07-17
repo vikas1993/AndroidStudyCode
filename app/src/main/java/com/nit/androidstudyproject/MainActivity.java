@@ -2,6 +2,7 @@ package com.nit.androidstudyproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    DbHelper dbHelper;
+   DbHelper dbHelper;
     TextView data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     public void delete(View view) {
         dbHelper.deleteContact(986857567);
             Toast.makeText(this, "Data is deleted", Toast.LENGTH_SHORT).show();
+    }
+    public void contentprovider(View view) {
+        startActivity(new Intent(this,ContentProviderActivity.class));
     }
     public void fetch(View view) {
        ArrayList<String> cr = dbHelper.getData();
