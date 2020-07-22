@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/Edit" android:title="@string/edit"/>
+    <item
+        android:id="@+id/SAVE" android:title="@string/save"/>
+    <item android:id="@+id/MENU_DELETE" android:title="@string/delete"/>
+    <item
+        android:id="@+id/OPEN" android:title="@string/open"/>
+    <item android:id="@+id/Add" android:title="@string/add"/>
+    <item
+        android:id="@+id/Refresh" android:title="@string/refresh"/>
+    <item
+        android:id="@+id/linkc" android:title="@string/link"/>
+    <item
+        android:id="@+id/markasdef" android:title="@string/def"/>
+    <item
+        android:id="@+id/addtofav" android:title="@string/addfav"/>
+</menu>
