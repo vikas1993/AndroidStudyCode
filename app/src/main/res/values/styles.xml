@@ -23,4 +23,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="MyStyle" parent="Theme.AppCompat">
+        <!--Setting text size-->
+        <item name="android:textSize">20sp</item>
+        <!--Setting the type face for the text -->
+        <item name="android:typeface">serif</item>
+        <!--Setting the style for the text -->
+        <item name="android:textStyle">italic</item>
+        <!--Setting the color-->
+        <item name="android:textColor">#FFFFFF </item>
+    </style>
+
 </resources>

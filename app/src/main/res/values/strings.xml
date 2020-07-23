@@ -12,6 +12,9 @@
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="Music">Music</string>
+    <string name="ON">ON</string>
+    <string name="OFF">Off</string>
     <string-array name="name_list">
         <item>Den</item>
         <item>Christi</item>

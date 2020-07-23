@@ -84,4 +84,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         startActivity(new Intent(MainActivity.this,TabbedActivity.class));
 
     }
+    public void showStyle(View view){
+        startActivity(new Intent(MainActivity.this, CustomStylesActivity.class));
+    }
 }
